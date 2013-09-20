@@ -67,3 +67,7 @@ edit the file `_config.yml` to contain:
 ```
 asides/weibo.html
 ```
+
+##references
+* octopress office setup instructions: <http://octopress.org/docs/setup/>
+* What's jekyll? <http://jekyllrb.com/>
