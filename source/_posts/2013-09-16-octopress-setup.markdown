@@ -33,6 +33,8 @@ open the file `_config.yml` and edit following lines:
 
 ##write a new post
 	rake new_post["how to setup octopress blog"]
+and checkout what has happened to your blog
+
 then edit the md file that is generated.
 
 ##deploy your octopress blog
