@@ -71,3 +71,7 @@ asides/weibo.html
 ##references
 * octopress office setup instructions: <http://octopress.org/docs/setup/>
 * What's jekyll? <http://jekyllrb.com/>
+* What's markdown? <http://daringfireball.net/projects/markdown/>
+
+##QR Code of this article
+![qrcode](../images/qrcode.17159653.png)
