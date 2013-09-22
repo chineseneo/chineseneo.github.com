@@ -6,6 +6,10 @@ comments: true
 categories: 
 ---
 
+## workflow comparison between normal blog framework and octopress
+![normal blog workflow](/images/common_blog_workflow.png)
+![normal blog workflow](/images/octopress_work_flow.png)
+
 ##setup local environment
 1. install git: <http://git-scm.com>
 2. install rvm: <http://rvm.io>
