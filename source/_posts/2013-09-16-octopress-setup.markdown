@@ -76,4 +76,4 @@ asides/weibo.html
 * What's markdown? <http://daringfireball.net/projects/markdown/>
 
 ##QR Code of this article
-![qrcode](../images/qrcode.17159653.png)
+![qrcode](/images/qrcode.17159653.png)
