@@ -6,13 +6,12 @@ comments: true
 categories: 
 ---
 
-## workflow comparison between normal blog framework and octopress
-![normal blog workflow](/images/common_blog_workflow.png)
+## workflow of setting up octopress
 ![normal blog workflow](/images/octopress_work_flow.png)
 
 ##setup local environment
 1. install git: <http://git-scm.com>
-2. install rvm: <http://rvm.io>
+2. install ruby: <https://www.ruby-lang.org/en/downloads/>
 
 ##clone octopress repository
 	git clone git://github.com/imathis/octopress.git
