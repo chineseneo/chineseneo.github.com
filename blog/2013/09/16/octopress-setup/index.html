@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>octopress blog setup - Place Holder's Life</title>
+  <meta name="author" content="Longkai CAO">
+
+  
+  <meta name="description" content="workflow of setting up octopress setup local environment install git: http://git-scm.com
+install ruby: https://www.ruby-lang.org/en/downloads/ clone &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://chineseneo.github.io/blog/2013/09/16/octopress-setup">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Place Holder's Life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Place Holder's Life</a></h1>
+  
+    <h2>living is easy, life is hard</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:chineseneo.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Octopress Blog Setup</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-16T11:59:00+08:00" pubdate data-updated="true">Sep 16<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>workflow of setting up octopress</h2>
+
+<p><img src="/images/octopress_work_flow.png" alt="normal blog workflow" /></p>
+
+<h2>setup local environment</h2>
+
+<ol>
+<li>install git: <a href="http://git-scm.com">http://git-scm.com</a></li>
+<li>install ruby: <a href="https://www.ruby-lang.org/en/downloads/">https://www.ruby-lang.org/en/downloads/</a></li>
+</ol>
+
+
+<h2>clone octopress repository</h2>
+
+<pre><code>git clone git://github.com/imathis/octopress.git
+</code></pre>
+
+<h2>setup local octopress blog</h2>
+
+<pre><code>cd octopress
+gem install bundler
+bundle install
+rake install
+</code></pre>
+
+<h2>preview local octopress blog</h2>
+
+<pre><code>rake preview
+</code></pre>
+
+<p>then you can view the blog with url <a href="http://localhost:4000">http://localhost:4000</a>.</p>
+
+<h2>change some configuration</h2>
+
+<p>open the file <code>_config.yml</code> and edit following lines:</p>
+
+<ul>
+<li>url: the url of the website(which will not be used in the local environment)</li>
+<li>title: the title that will displayed on homepage</li>
+<li>subtitle: the subtitle that will be displayed below the title</li>
+<li>author: your name or nickname</li>
+</ul>
+
+
+<h2>write a new post</h2>
+
+<pre><code>rake new_post["how to setup octopress blog"]
+</code></pre>
+
+<p>and checkout what has happened to your blog</p>
+
+<p>then edit the md file that is generated.</p>
+
+<h2>deploy your octopress blog</h2>
+
+<h3>web server</h3>
+
+<ul>
+<li>create a new git repository with the username.github.io as the name</li>
+</ul>
+
+
+<h3>setup octopress to deploy to right place</h3>
+
+<pre><code>rake setup_github_pages
+</code></pre>
+
+<p>and input the repository url of your git pages repository</p>
+
+<h3>generate website and deploy</h3>
+
+<pre><code>rake generate
+rake deploy
+</code></pre>
+
+<h3>save changes</h3>
+
+<pre><code>git add .
+git commit -m "your commit message"
+git push origin source
+</code></pre>
+
+<h2>third party plugins</h2>
+
+<h3>github profile</h3>
+
+<p>edit the file <code>_config.yml</code> to contain:</p>
+
+<pre><code>github_user: chineseneo
+</code></pre>
+
+<h3>weibo link</h3>
+
+<ul>
+<li>generate the weibo link from <a href="http://app.weibo.com/tool/signature">http://app.weibo.com/tool/signature</a></li>
+<li>create an html file in <code>source/_includes/asides/</code> directory, name it <code>weibo.html</code>. and put the weibo link in it</li>
+<li>then edite <code>_config.yml</code> and add the following content to the key <code>default_asides</code></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>asides/weibo.html</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>references</h2>
+
+<ul>
+<li>octopress office setup instructions: <a href="http://octopress.org/docs/setup/">http://octopress.org/docs/setup/</a></li>
+<li>What&rsquo;s jekyll? <a href="http://jekyllrb.com/">http://jekyllrb.com/</a></li>
+<li>What&rsquo;s markdown? <a href="http://daringfireball.net/projects/markdown/">http://daringfireball.net/projects/markdown/</a></li>
+</ul>
+
+
+<h2>QR Code of this article</h2>
+
+<p><img src="/images/qrcode.17159653.png" alt="qrcode" /></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Longkai CAO</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-16T11:59:00+08:00" pubdate data-updated="true">Sep 16<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://chineseneo.github.io/blog/2013/09/16/octopress-setup/" data-via="locktsal" data-counturl="http://chineseneo.github.io/blog/2013/09/16/octopress-setup/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/12/19/shi-yong-karmapei-zhi-javascriptce-shi/" title="Next Post: karma配置中的一些问题">karma配置中的一些问题 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/01/14/gitgao-ji-yuan-li-fen-xi/">Git高级原理分析</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/23/sleep-locker/">Sleep Locker</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/19/shi-yong-karmapei-zhi-javascriptce-shi/">Karma配置中的一些问题</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/16/octopress-setup/">Octopress Blog Setup</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/chineseneo">@chineseneo</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'chineseneo',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+<a href="http://weibo.com/u/1749833763?s=6uyXnP" target="_blank"><img border="0" src="http://service.t.sina.com.cn/widget/qmd/1749833763/ec27240f/1.png"/></a>
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Longkai CAO - <a href="mailto:lkcao@thoughtworks.com">Email Me</a>
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

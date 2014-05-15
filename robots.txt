@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://chineseneo.github.io/sitemap.xml 

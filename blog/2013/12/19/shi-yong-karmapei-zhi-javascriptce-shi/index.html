@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Place Holder's Life</title>
+  <title>karma配置中的一些问题 - Place Holder's Life</title>
   <meta name="author" content="Longkai CAO">
 
   
-  <meta name="description" content="detached HEAD 我们我们应该经常会使用git checkout HEAD~n这样的命令来查看历史的某一次提交，那么什么是HEAD呢？有人可能会说HEAD就是一个指向某个commit的reference，这种理解没错，但也不是全对。 如果你在一个git repo的根目录下执行命令cat &hellip;">
+  <meta name="description" content="之前看了icodeit的博客使用Karma运行JavaScript测试，试了一下karma，果然是非常好用。 关于使用karma基础流程，就请参照那篇博客。 这里主要针对我在配置karma的时候遇到的一些特殊问题进行一个总结。 使用karma-html-reporter配置生成的html测试报告 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://chineseneo.github.io">
+  <link rel="canonical" href="http://chineseneo.github.io/blog/2013/12/19/shi-yong-karmapei-zhi-javascriptce-shi">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Place Holder's Life" type="application/atom+xml">
@@ -63,115 +63,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/01/14/gitgao-ji-yuan-li-fen-xi/">Git高级原理分析</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-14T14:05:00+08:00" pubdate data-updated="true">Jan 14<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h1>detached HEAD</h1>
-
-<p>我们我们应该经常会使用<code>git checkout HEAD~n</code>这样的命令来查看历史的某一次提交，那么什么是HEAD呢？有人可能会说HEAD就是一个指向某个commit的reference，这种理解没错，但也不是全对。</p>
-
-<p>如果你在一个git repo的根目录下执行命令<code>cat .git/HEAD</code>，得到的结果会有两种可能：</p>
-
-<ul>
-<li>一般情况下应该会得到形如<code>ref: refs/heads/master</code>的结果，也就是HEAD所指向的refs/heads目录下的master；</li>
-<li>但是如果执行<code>cat</code>命令之前先使用<code>git checkout</code>提取某个commit，那么就会得到形如<code>93acc9c3279113af3fb492234169059811864801</code>的结果，也就是HEAD的指向是一个commit的hash。</li>
-</ul>
-
-
-<p>为什么会出现这样的结果？</p>
-
-<p>其实HEAD最主要的功能在于追踪branch。每当一个新的git repo被创建出来的时候，都会产生一个HEAD，并且默认指向<code>ref: refs/heads/master</code>，即使这时候master还不存在。在这种情况下，如果连续commit的话，会发现你始终在master这个branch上面，也就是说，HEAD被attach在master上了。</p>
-
-<p>那么，如果我们进行<code>git checkout HEAD~</code>这样的操作呢？试试上操作结束后，git会立即这样提醒：</p>
-
-<pre><code>You are in 'detached HEAD' state. You can look around, make experimental changes and commit them, and you can discard any commits you make in this state without impacting any branches by performing another checkout.
-</code></pre>
-
-<p>这就是<code>detached HEAD</code>状态。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/23/sleep-locker/">Sleep Locker</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-23T20:45:00+08:00" pubdate data-updated="true">Dec 23<span>rd</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>这是一个使用<a href="http://www.powtoon.com/">Powtoon</a>制作的动画演示短片。</p>
-
-<iframe width="640" height="401" src="http://www.powtoon.com/embed/dIHjBSCdYRE/" frameborder="0"></iframe>
-
-
-<p>Powtoon是一个非常强大的演示工具。使用他你可以创建很多很有意思的动画，来展示自己的想法。</p>
-
-<p>有兴趣的话，快去试试吧！</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/19/shi-yong-karmapei-zhi-javascriptce-shi/">Karma配置中的一些问题</a></h1>
+      <h1 class="entry-title">Karma配置中的一些问题</h1>
     
     
       <p class="meta">
@@ -194,7 +91,7 @@
   </header>
 
 
-  <div class="entry-content"><p>之前看了<a href="www.icodeit.org">icodeit</a>的博客<a href="http://icodeit.org/2013/10/using-karma-as-the-javascript-test-runner/">使用Karma运行JavaScript测试</a>，试了一下karma，果然是非常好用。</p>
+<div class="entry-content"><p>之前看了<a href="www.icodeit.org">icodeit</a>的博客<a href="http://icodeit.org/2013/10/using-karma-as-the-javascript-test-runner/">使用Karma运行JavaScript测试</a>，试了一下karma，果然是非常好用。</p>
 
 <p>关于使用karma基础流程，就请参照那篇博客。</p>
 
@@ -371,22 +268,16 @@ window.__html__['template.html'] = '&lt;div&gt;something&lt;/div&gt;';
 
 <p>然后再重启karma服务器，就会发现一切正常了。</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/16/octopress-setup/">Octopress Blog Setup</a></h1>
-    
-    
-      <p class="meta">
-        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Longkai CAO</span></span>
+
+      
 
 
 
@@ -398,142 +289,36 @@ window.__html__['template.html'] = '&lt;div&gt;something&lt;/div&gt;';
   
 
 
-<time datetime="2013-09-16T11:59:00+08:00" pubdate data-updated="true">Sep 16<span>th</span>, 2013</time>
-        
-      </p>
+<time datetime="2013-12-19T23:31:00+08:00" pubdate data-updated="true">Dec 19<span>th</span>, 2013</time>
+      
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><h2>workflow of setting up octopress</h2>
-
-<p><img src="/images/octopress_work_flow.png" alt="normal blog workflow" /></p>
-
-<h2>setup local environment</h2>
-
-<ol>
-<li>install git: <a href="http://git-scm.com">http://git-scm.com</a></li>
-<li>install ruby: <a href="https://www.ruby-lang.org/en/downloads/">https://www.ruby-lang.org/en/downloads/</a></li>
-</ol>
-
-
-<h2>clone octopress repository</h2>
-
-<pre><code>git clone git://github.com/imathis/octopress.git
-</code></pre>
-
-<h2>setup local octopress blog</h2>
-
-<pre><code>cd octopress
-gem install bundler
-bundle install
-rake install
-</code></pre>
-
-<h2>preview local octopress blog</h2>
-
-<pre><code>rake preview
-</code></pre>
-
-<p>then you can view the blog with url <a href="http://localhost:4000">http://localhost:4000</a>.</p>
-
-<h2>change some configuration</h2>
-
-<p>open the file <code>_config.yml</code> and edit following lines:</p>
-
-<ul>
-<li>url: the url of the website(which will not be used in the local environment)</li>
-<li>title: the title that will displayed on homepage</li>
-<li>subtitle: the subtitle that will be displayed below the title</li>
-<li>author: your name or nickname</li>
-</ul>
-
-
-<h2>write a new post</h2>
-
-<pre><code>rake new_post["how to setup octopress blog"]
-</code></pre>
-
-<p>and checkout what has happened to your blog</p>
-
-<p>then edit the md file that is generated.</p>
-
-<h2>deploy your octopress blog</h2>
-
-<h3>web server</h3>
-
-<ul>
-<li>create a new git repository with the username.github.io as the name</li>
-</ul>
-
-
-<h3>setup octopress to deploy to right place</h3>
-
-<pre><code>rake setup_github_pages
-</code></pre>
-
-<p>and input the repository url of your git pages repository</p>
-
-<h3>generate website and deploy</h3>
-
-<pre><code>rake generate
-rake deploy
-</code></pre>
-
-<h3>save changes</h3>
-
-<pre><code>git add .
-git commit -m "your commit message"
-git push origin source
-</code></pre>
-
-<h2>third party plugins</h2>
-
-<h3>github profile</h3>
-
-<p>edit the file <code>_config.yml</code> to contain:</p>
-
-<pre><code>github_user: chineseneo
-</code></pre>
-
-<h3>weibo link</h3>
-
-<ul>
-<li>generate the weibo link from <a href="http://app.weibo.com/tool/signature">http://app.weibo.com/tool/signature</a></li>
-<li>create an html file in <code>source/_includes/asides/</code> directory, name it <code>weibo.html</code>. and put the weibo link in it</li>
-<li>then edite <code>_config.yml</code> and add the following content to the key <code>default_asides</code></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>asides/weibo.html</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>references</h2>
-
-<ul>
-<li>octopress office setup instructions: <a href="http://octopress.org/docs/setup/">http://octopress.org/docs/setup/</a></li>
-<li>What&rsquo;s jekyll? <a href="http://jekyllrb.com/">http://jekyllrb.com/</a></li>
-<li>What&rsquo;s markdown? <a href="http://daringfireball.net/projects/markdown/">http://daringfireball.net/projects/markdown/</a></li>
-</ul>
-
-
-<h2>QR Code of this article</h2>
-
-<p><img src="/images/qrcode.17159653.png" alt="qrcode" /></p>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://chineseneo.github.io/blog/2013/12/19/shi-yong-karmapei-zhi-javascriptce-shi/" data-via="locktsal" data-counturl="http://chineseneo.github.io/blog/2013/12/19/shi-yong-karmapei-zhi-javascriptce-shi/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/09/16/octopress-setup/" title="Previous Post: octopress blog setup">&laquo; octopress blog setup</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/12/23/sleep-locker/" title="Next Post: sleep locker">sleep locker &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -562,7 +347,7 @@ git push origin source
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/chineseneo">@chineseneo</a> on GitHub
@@ -594,6 +379,7 @@ git push origin source
 <a href="http://weibo.com/u/1749833763?s=6uyXnP" target="_blank"><img border="0" src="http://service.t.sina.com.cn/widget/qmd/1749833763/ec27240f/1.png"/></a>
   
 </aside>
+
 
     </div>
   </div>
