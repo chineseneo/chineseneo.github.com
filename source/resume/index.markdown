@@ -1,14 +1,11 @@
 ---
 layout: page
-title: "resume"
+title: "曹隆凯"
 date: 2014-05-15 00:04
 comments: true
 sharing: true
 footer: true
 ---
-#曹隆凯
-
-
 
 ##个人简介
 - 出生年月：1988年2月
@@ -68,7 +65,7 @@ footer: true
   - 时间：2012.07-2014.05
   - 主要任务：帮助REA（澳洲最大的房产网站[realestate](http://www.realestate.com.au)）对其意大利的子网站（[casa](http://casa.it)）进行维护和功能升级
   - 技术栈：Java和Spring MVC框架，集成测试中使用了基于Ruby的cucumber集成测试框架
-  - 职务：项目中担任过DEV，QA，BA角色，并兼任项目**Tech Lead**
+  - 职务：项目中担任过DEV，QA，BA角色，并兼任项目Tech Lead
   
 ---
 - [Bamboo CI Monitor](https://github.com/chineseneo/bamboo-ci-monitor)（个人项目）
